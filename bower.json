@@ -1,0 +1,21 @@
+{
+  "name": "FrontEnd",
+  "version": "0.0.1",
+  "authors": [
+    "Andrei Khoroshavin <horoshavin-andr@mail.ru>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "packages",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.5",
+    "normalize.css": "~3.0.3"
+  }
+}
