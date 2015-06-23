@@ -1,3 +1,219 @@
 body {
   background: url("../img/overlay.png") repeat #f3f3f3;
 }
+body header {
+  background: url("../img/overlay.png") repeat #282b34;
+  box-shadow: 0 0 10px #000000;
+}
+body header h1 {
+  font-family: "Bitter";
+  color: white;
+  margin: 25px 0;
+  font-size: 3.3em;
+  float: left;
+}
+body header ul {
+  list-style: none;
+  float: right;
+  margin: 0;
+  padding: 0;
+}
+body header ul.navbar_icon {
+  display: none;
+}
+body header ul.navbar_icon li {
+  margin-top: 10px;
+  padding: 0 35px;
+  font-size: 2.7em;
+}
+body header ul.navbar_list li {
+  margin: 40px 0 0 0;
+}
+body header ul li {
+  display: inline-block;
+}
+body header ul li a {
+  padding: 0 25px;
+  color: #eeeeee;
+  opacity: .7;
+  font-size: 1.6em;
+  font-family: "PT Sans";
+  transition: opacity 0.15s ease-in-out;
+}
+body header ul li a:hover,
+body header ul li a:focus {
+  text-decoration: none;
+  color: #eeeeee;
+  opacity: 1;
+}
+body section form#dota_form {
+  margin: 100px 0 0 0;
+  background: url("../img/overlay.png") repeat white;
+  padding: 50px 75px;
+  border-radius: 10px;
+  border: 2px solid #282b34;
+}
+body section form#dota_form .row:last-child {
+  margin-top: 30px;
+}
+body section form#dota_form .radiobuttons input {
+  display: none;
+}
+body section form#dota_form .radiobuttons input:checked + label {
+  background: rgba(0, 0, 0, 0.1);
+}
+body section form#dota_form .radiobuttons label {
+  transition: background .4s;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 200;
+  font-size: 1.3em;
+  color: #282b34;
+  padding: 5px 15px;
+  margin: 5px 35px 0 0;
+}
+body section form#dota_form .list {
+  padding: 0 25px 0 0;
+  margin-left: 25px;
+}
+body section form#dota_form label {
+  font-size: 1.3em;
+  margin-top: 10px;
+}
+body section form#dota_form label + div {
+  padding: 0;
+}
+body section form#dota_form button[type="submit"] {
+  margin-right: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-weight: bold;
+  font-size: 1.4em;
+}
+body section form#dota_form .search {
+  margin-left: 58px;
+}
+@media (min-width: 769px) {
+  #dota_form label {
+    font-weight: 200;
+  }
+  #dota_form label[for="start_price"] {
+    width: 108px;
+    padding: 0 0 0 28px;
+  }
+  #dota_form label[for="finish_price"] {
+    padding: 0 0 0 23px;
+    width: 55px;
+  }
+}
+@media (max-width: 1200px) {
+  #dota_form .radiobuttons label {
+    margin-right: 14px !important;
+  }
+  #dota_form .list {
+    margin-left: 0 !important;
+  }
+  #dota_form .search {
+    margin-left: 25px !important;
+  }
+}
+@media (max-width: 992px) {
+  #dota_form .radiobuttons {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  #dota_form label[for*="_price"] {
+    padding-left: 0 !important;
+  }
+  #dota_form label[for="finish_price"] {
+    margin-left: 30px;
+  }
+  #dota_form .search,
+  #dota_form .submit {
+    margin-top: 30px !important;
+  }
+  #dota_form .search {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+}
+@media (max-width: 768px) {
+  header h1 {
+    padding-left: 15px;
+  }
+  header ul.navbar_list {
+    display: none;
+    background: white;
+    border: 2px solid #aaaaaa;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 120px;
+    right: 8px;
+  }
+  header ul.navbar_list li:last-child {
+    border-bottom: none;
+  }
+  header ul.navbar_list li {
+    display: block;
+    margin: 0 !important;
+    padding: 10px 0;
+    border-bottom: 2px solid #aaaaaa;
+  }
+  header ul.navbar_list li a {
+    padding: 0 25px;
+    color: #282b34 !important;
+    opacity: 1 !important;
+  }
+  header ul.navbar_list li a:active,
+  header ul.navbar_list li a:focus {
+    color: #e97770 !important;
+  }
+  header ul.navbar_list::before {
+    content: '';
+    position: absolute;
+    /* Абсолютное позиционирование */
+    right: 36px;
+    bottom: 104px;
+    /* Положение треугольника */
+    border: 20px solid transparent;
+    border-bottom: 20px solid #aaaaaa;
+  }
+  header ul.navbar_list::after {
+    content: '';
+    position: absolute;
+    /* Абсолютное позиционирование */
+    right: 36px;
+    bottom: 101px;
+    /* Положение треугольника */
+    border: 20px solid transparent;
+    border-bottom: 20px solid white;
+  }
+  header ul.navbar_icon {
+    display: block !important;
+  }
+  header ul.navbar_icon li {
+    padding: 0 !important;
+  }
+  section #dota_form label[for="finish_price"] {
+    margin-left: 0;
+  }
+  section #dota_form .list {
+    padding-right: 0 !important;
+  }
+}
+@media (max-width: 430px) {
+  header h1 {
+    font-size: 2.3em !important;
+  }
+  header ul.navbar_icon li {
+    font-size: 1.5em !important;
+    margin-top: 21px !important;
+  }
+  section #dota_form .radiobuttons {
+    font-size: 0.95em;
+  }
+  section #dota_form label[for*="_price"] {
+    font-size: 1.1em;
+  }
+}

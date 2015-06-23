@@ -6,33 +6,133 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	
 	<title>Dragon Games</title>
+	
+	<!-- HTML5 and CSS3 sustain for old version of IE  -->
 	<!--[if lt IE 9]>
-	  <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.js"></script>
-	<![endif]-->
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
 	<link rel="stylesheet" href="../packages/normalize.css/normalize.css">
 	<link rel="stylesheet" href="../packages/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../packages/bootstrap/dist/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="../css/dragong_area.css">
-	<script src="../packages/jquery/dist/jquery.min.js"></script>
-	<script src="../packages/bootstrap/dist/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="../packages/font-awesome/css/font-awesome.min.css">
 </head>
+
 <body>
 	<!-- Header -->
 	<header>
-			
+			<!-- Using container -->
+			<div class="container">
+				<!-- Title -->
+				<h1> DragonG Area </h1>
+				
+				<!-- Navigation -->
+				<nav>
+					<ul class="navbar_list" id="navigation">
+						<li><a href="#">Регистрация</a></li>
+						<li><a href="#">Вход</a></li>
+					</ul>	
+					<ul class="navbar_icon" id="button_navigation">
+						<li><a href="#">&#9776;</a></li>
+					</ul>
+				</nav>
+			</div>
 	</header>
 
 	<!-- Main Content -->
-	<section>
-		
+	<section class="container">
+		<!-- Dota Form -->
+		<form action="list.php" method="POST" id="dota_form" role="form">
+			
+			<div class="row">
+
+				<!-- Radio Buttons -->
+				<div class="col-lg-5 col-md-5 col-sm-12 radiobuttons">
+					<input type="radio" name="kind" value="active" id="active">
+					<label for="active">Активные</label>
+					<input type="radio" name="kind" value="new" id="new">
+					<label for="new">Новые</label>
+					<input type="radio" name="kind" value="all" id="all" checked>
+					<label for="all">Все</label>	
+				</div>
+				
+				<!-- Rare List -->
+				<div class="list col-lg-2 col-md-3 col-sm-4 col-xs-12 pull-right">
+					<select name="hero" size="1" class="form-control input-lg" id="hero_list" required>
+						<option class="list_name">Редкость</option>
+						<option value="Common"> Common </option>
+						<option value="Rare"> Rare </option>
+						<option value="Mythical"> Mythical </option>
+						<option value="Legendary"> Legendary </option>
+						<option value="Immortal"> Immortal </option>
+						<option value="Arcana"> Arcana </option>
+					</select>
+				</div>
+
+				<!-- Hero List -->
+				<div class="list col-lg-2 col-md-2 col-sm-4 col-xs-12 pull-right">
+					<select name="hero" size="1" class="form-control input-lg" id="hero_list" required>
+						<option class="list_name">Герой</option>
+						<option value="Pudge"> Pudge </option>
+						<option value="Abbadon"> Abbadon </option>
+						<option value="Crystal Maiden"> Crystal Maiden </option>
+						<option value="Earthshaker"> Earthshaker </option>
+					</select>
+				</div>
+
+				<!-- Kind of Items List -->
+				<div class="list col-lg-2 col-md-2 col-sm-4 col-xs-12 pull-right">
+					<select name="hero" size="1" class="form-control input-lg" id="hero_list" required>
+						<option class="list_name">Вид</option>
+						<option value="subjects"> Предметы </option>
+						<option value="kits"> Наборы </option>
+						<option value="couriers"> Курьеры </option>
+					</select>
+				</div>
+			</div>
+			<div class="row">
+				
+				<!-- Price Input -->
+				<label for="start_price" class="col-lg-2 col-md-2 col-sm-3 col-xs-4"> Цена от </label>
+				<div class="col-lg-1 col-md-1  col-sm-3 col-xs-8">
+					<input type="text" class="form-control input-lg" placeholder="0" id="start_price">
+				</div>
+				
+				<label for="finish_price" class="col-lg-1 col-md-1 col-sm-2 col-xs-4"> до </label>
+				<div class="col-lg-1 col-md-1 col-sm-3 col-xs-8">
+					<input type="text" class="form-control input-lg" placeholder="10000" id="finish_price">
+				</div>
+
+				<!-- Search Input -->
+				<div class="col-lg-5 col-md-5  col-sm-8  col-xs-12 search">
+					<input type="text" class="form-control input-lg" placeholder="Искать по названию" id="search">
+				</div>
+
+				<!-- Submit Button-->
+				<div class="col-lg-2 col-md-2  col-sm-4 pull-right submit">
+					<button type="submit" class="btn btn-danger btn-lg pull-right">Найти</button>
+				</div>
+			</div>
+			
+		</form>
 	</section>
 	
 	<!-- Footer -->
 	<footer>
 		
 	</footer>
+
+	<!-- Scripts -->
+	<script src="../packages/jquery/dist/jquery.min.js"></script>
+	<script src="../packages/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script src="../js/dragong_area.js"></script>
 </body>
 </html>
