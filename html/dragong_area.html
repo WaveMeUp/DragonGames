@@ -49,6 +49,14 @@
 
 	<!-- Main Content -->
 	<section class="container">
+
+		<!-- Form's Switcher between Dota and CS:GO -->
+		<div id="switcher">
+			<input type="radio" name="form_name" value="csgo" id="csgo">
+			<label for="csgo">CS:GO</label>
+			<input type="radio" name="form_name" value="dota" id="dota" checked>
+			<label for="dota">Dota 2</label>
+		</div>
 		<!-- Dota Form -->
 		<form action="list.php" method="POST" id="dota_form" role="form">
 			
@@ -56,18 +64,18 @@
 
 				<!-- Radio Buttons -->
 				<div class="col-lg-5 col-md-5 col-sm-12 radiobuttons">
-					<input type="radio" name="kind" value="active" id="active">
-					<label for="active">Активные</label>
-					<input type="radio" name="kind" value="new" id="new">
-					<label for="new">Новые</label>
-					<input type="radio" name="kind" value="all" id="all" checked>
-					<label for="all">Все</label>	
+					<input type="radio" name="kind" value="active" id="dota_active">
+					<label for="dota_active">Активные</label>
+					<input type="radio" name="kind" value="new" id="dota_new">
+					<label for="dota_new">Новые</label>
+					<input type="radio" name="kind" value="all" id="dota_all" checked>
+					<label for="dota_all">Все</label>	
 				</div>
 				
 				<!-- Rare List -->
 				<div class="list col-lg-2 col-md-3 col-sm-4 col-xs-12 pull-right">
 					<select name="hero" size="1" class="form-control input-lg" id="hero_list" required>
-						<option class="list_name">Редкость</option>
+						<option value="either">Редкость</option>
 						<option value="Common"> Common </option>
 						<option value="Rare"> Rare </option>
 						<option value="Mythical"> Mythical </option>
@@ -80,7 +88,7 @@
 				<!-- Hero List -->
 				<div class="list col-lg-2 col-md-2 col-sm-4 col-xs-12 pull-right">
 					<select name="hero" size="1" class="form-control input-lg" id="hero_list" required>
-						<option class="list_name">Герой</option>
+						<option value="either">Герой</option>
 						<option value="Pudge"> Pudge </option>
 						<option value="Abbadon"> Abbadon </option>
 						<option value="Crystal Maiden"> Crystal Maiden </option>
@@ -91,13 +99,91 @@
 				<!-- Kind of Items List -->
 				<div class="list col-lg-2 col-md-2 col-sm-4 col-xs-12 pull-right">
 					<select name="hero" size="1" class="form-control input-lg" id="hero_list" required>
-						<option class="list_name">Вид</option>
+						<option value="either">Вид</option>
 						<option value="subjects"> Предметы </option>
 						<option value="kits"> Наборы </option>
 						<option value="couriers"> Курьеры </option>
 					</select>
 				</div>
 			</div>
+			<div class="row">
+				
+				<!-- Price Input -->
+				<label for="start_price" class="col-lg-2 col-md-2 col-sm-3 col-xs-4"> Цена от </label>
+				<div class="col-lg-1 col-md-1  col-sm-3 col-xs-8">
+					<input type="text" class="form-control input-lg" placeholder="0" id="start_price">
+				</div>
+				
+				<label for="finish_price" class="col-lg-1 col-md-1 col-sm-2 col-xs-4"> до </label>
+				<div class="col-lg-1 col-md-1 col-sm-3 col-xs-8">
+					<input type="text" class="form-control input-lg" placeholder="10000" id="finish_price">
+				</div>
+
+				<!-- Search Input -->
+				<div class="col-lg-5 col-md-5  col-sm-8  col-xs-12 search">
+					<input type="text" class="form-control input-lg" placeholder="Искать по названию" id="search">
+				</div>
+
+				<!-- Submit Button-->
+				<div class="col-lg-2 col-md-2  col-sm-4 pull-right submit">
+					<button type="submit" class="btn btn-danger btn-lg pull-right">Найти</button>
+				</div>
+			</div>
+		</form>
+
+		<!-- CS:GO Form -->
+		<form action="list.php" method="POST" id="csgo_form" role="form">
+			
+			<div class="row">
+
+				<!-- Radio Buttons -->
+				<div class="col-lg-5 col-md-5 col-sm-12 radiobuttons">
+					<input type="radio" name="nkind" value="active" id="csgo_active">
+					<label for="csgo_active">Активные</label>
+					<input type="radio" name="nkind" value="new" id="csgo_new">
+					<label for="csgo_new">Новые</label>
+					<input type="radio" name="nkind" value="all" id="csgo_all" checked>
+					<label for="csgo_all">Все</label>	
+				</div>
+				
+				<!-- Rare List -->
+				<div class="list col-lg-2 col-md-3 col-sm-4 col-xs-12 pull-right">
+					<select name="rare" size="1" class="form-control input-lg" id="rare_list" required>
+						<option value="either">Редкость</option>
+						<option value="Shiropotreb"> Широпотреб </option>
+						<option value="Army"> Армейское качество </option>
+						<option value="Factory"> Промышленное качество </option>
+						<option value="Prohibited"> Запрещенное </option>
+						<option value="Secret"> Засекреченное </option>
+						<option value="TopSecret"> Тайное </option>
+					</select>
+				</div>
+
+				<!-- Category List -->
+				<div class="list col-lg-2 col-md-2 col-sm-4 col-xs-12 pull-right">
+					<select name="hero" size="1" class="form-control input-lg" id="category_list" required>
+						<option value="either"> Категория </option>
+						<option value="Common"> Обычный </option>
+						<option value="StatTrak"> StatTrak&#8482; </option>
+						<option value="Knife"> &#9733; </option>
+						<option value="Statrak_knife"> &#9733; StatTrak&#8482; </option>
+					</select>
+				</div>
+
+				<!-- Quality List -->
+				<div class="list col-lg-2 col-md-2 col-sm-4 col-xs-12 pull-right">
+					<select name="hero" size="1" class="form-control input-lg" id="quality_list" required>
+						<option value="either"> Качество </option>
+						<option value="After_field_tests"> После полевых испытаний </option>
+						<option value="Little_shabby"> Немного поношенное </option>
+						<option value="Battle-seasoned"> Закаленное в боях </option>
+						<option value="Shabby"> Поношенное </option>
+						<option value="Straight_from_the_factory"> Прямо с завода </option>
+						<option value="Not Colored"> Не покрашено </option>
+					</select>
+				</div>
+			</div>
+
 			<div class="row">
 				
 				<!-- Price Input -->

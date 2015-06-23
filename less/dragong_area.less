@@ -78,12 +78,46 @@ body{
 	}
 
 	section{
+		position: relative;
+
+		#switcher{
+			margin: 100px 0 0 0;
+			position: relative;
+			top: 5px;
+			left: 50px;
+
+			input{
+				display: none;
+			}
+			label{
+				font-weight: 200;
+				font-size: 1.3em;
+				color: #B8BAB3;
+				border-top: 2px solid #B8BAB3;
+				border-right: 2px solid #B8BAB3;
+				border-left: 2px solid #B8BAB3;
+				border-top-left-radius: 8px;
+				border-top-right-radius: 8px;
+				padding: 5px 30px;
+				transition: all .5s;
+				cursor: pointer;
+			}
+			input:checked + label{
+				color: @head_foot_color;
+				background: url(@texture) repeat white;
+				border-color: @head_foot_color @head_foot_color white @head_foot_color;
+			}
+		}
 		form{
 			// General styles for both forms
+			position: absolute;
 
-			// Styles for Dota Form
-			&#dota_form{
-				margin: 100px 0 0 0;
+			&#csgo_form{
+				display: none;
+			}
+			// Styles for Dota and CS:GO
+			&#dota_form, &#csgo_form{
+				
 				background: url(@texture) repeat white;
 				padding: 50px 75px;
 				border-radius: 10px;
@@ -149,7 +183,7 @@ body{
 @media (min-width: 769px){
 	
 	// Dota-form Styles
-	#dota_form{
+	#dota_form, #csgo_form{
 
 		// Price Options Styles
 		label{
@@ -169,7 +203,7 @@ body{
 @media (max-width: 1200px){
 	
 	// Dota-Form Styles
-	#dota_form {
+	#dota_form, #csgo_form{
 
 		// Radio-buttons Styles
 		.radiobuttons label{
@@ -190,7 +224,7 @@ body{
 
 @media (max-width: 992px){
 
-	#dota_form{
+	#dota_form, #csgo_form{
 
 		//Radio-buttons Styles
 		.radiobuttons{
@@ -283,7 +317,7 @@ body{
 	section{
 
 		// Dota-form Styles
-		#dota_form{
+		#dota_form, #csgo_form{
 
 			// Price Options Styles
 			label[for="finish_price"]{
@@ -307,7 +341,7 @@ body{
 		}
 	}
 	section{
-		#dota_form{
+		#dota_form, #csgo_form{
 			.radiobuttons{
 				font-size: 0.95em;
 			}
