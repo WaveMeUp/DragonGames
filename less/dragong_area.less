@@ -7,6 +7,11 @@
 @pink: #e97770;
 @navigation_color: #eeeeee;
 @prompt_nav_border_color: #aaaaaa;
+@item_name_color: #83868d;
+@switcher_color: #B8BAB3;
+@switcher_check_color: @head_foot_color;
+@new_item_shadow: #d2322d;
+@exist_item_shadow: #2c6899;
 
 // size-variables
 @header_height: 100px; 
@@ -49,6 +54,8 @@ body{
 			
 			// Styles for list
 			&.navbar_list{
+				z-index: 99;
+
 				li{
 					margin: @header_height/2.5 0 0 0;
 				}
@@ -65,7 +72,7 @@ body{
 					font-size: 1.6em;
 					font-family: "PT Sans";
 					transition: opacity .15s ease-in-out;
-					
+
 					&:hover, &:focus{
 						text-decoration: none;
 						color: @navigation_color;
@@ -81,21 +88,22 @@ body{
 		position: relative;
 
 		#switcher{
-			margin: 100px 0 0 0;
+			margin-top: 100px;
 			position: relative;
-			top: 5px;
-			left: 50px;
 
 			input{
 				display: none;
 			}
 			label{
+				position: relative;
+				top: 5px;
+				left: 50px;				
 				font-weight: 200;
 				font-size: 1.3em;
-				color: #B8BAB3;
-				border-top: 2px solid #B8BAB3;
-				border-right: 2px solid #B8BAB3;
-				border-left: 2px solid #B8BAB3;
+				color: @switcher_color;
+				border-top: 2px solid @switcher_color;
+				border-right: 2px solid @switcher_color;
+				border-left: 2px solid @switcher_color;
 				border-top-left-radius: 8px;
 				border-top-right-radius: 8px;
 				padding: 5px 30px;
@@ -103,15 +111,17 @@ body{
 				cursor: pointer;
 			}
 			input:checked + label{
-				color: @head_foot_color;
+				color: @switcher_check_color;
 				background: url(@texture) repeat white;
-				border-color: @head_foot_color @head_foot_color white @head_foot_color;
+				border-color: @switcher_check_color @switcher_check_color white @switcher_check_color;
 			}
 		}
+
 		form{
 			// General styles for both forms
-			position: absolute;
-
+			// position: absolute;
+			
+			// By Default
 			&#csgo_form{
 				display: none;
 			}
@@ -175,6 +185,119 @@ body{
 				//Search Input Styles
 				.search{
 					margin-left: 58px;
+				}
+			}
+		}
+
+		#items_list{
+			margin-top: 15px;
+			
+			// Button "More"
+			.button_more{
+				margin-top: 30px;
+
+				button{
+					padding: 10px 30px;
+				}
+			}
+
+			// Centring Items inside Colums
+			div[class*="col-"]{
+				text-align: center;
+			}
+
+			// General Styles for Exits and New Items
+			.exist_item, .new_item{
+				background: url(@texture) repeat @head_foot_color;
+				border-radius: 10px;
+				height: 350px;
+				width: 262.5px;
+				margin-right: 0;
+				text-align: center;
+				margin: 25px auto 0 auto;
+				cursor: pointer;
+				transition: box-shadow .3s;
+
+				img{
+					margin-top: 30px;
+				}
+				.item_price::after{
+					content: " р.";
+				}
+			}
+
+			// Styles for New Item
+			.new_item{
+				
+				&:hover{
+					box-shadow: 0 0 25px @new_item_shadow;
+				}
+				.item_name{
+					color: @item_name_color;
+					margin-top: 30px;
+					font-weight: bold;
+					letter-spacing: 2px;
+					font-size: 1.5em;
+				}
+				.item_price{
+					color: @pink;
+					margin-top: 10px;
+					letter-spacing: 5px;
+					font-weight: bold;
+					font-size: 1.3em;
+				}
+				button{
+					font-size: 1.4em;
+					margin-top: 25px;
+					padding: 8px 35px;
+				}
+			}
+
+			// Styles for Exist Item
+			.exist_item{
+
+				&:hover{
+					box-shadow: 0 0 25px @exist_item_shadow;
+				}
+				
+				.item_name{
+					color: @item_name_color;
+					margin-top: 10px;
+					font-weight: bold;
+					letter-spacing: 2px;
+					font-size: 1.5em;
+				}
+				.item_price{
+					color: @pink;
+					margin-top: 10px;
+					letter-spacing: 5px;
+					font-weight: bold;
+					font-size: 1.3em;
+				}
+				
+				.current_status{
+					margin-top: 20px;
+					position: relative;
+
+					 .progress{
+						margin-left: 36px;
+						width: 157px;
+					 }
+					 .status_num{
+					 	font-size: 1.3em;
+					 	font-weight: bold;
+					 	position: absolute;
+					 	top: -1px;
+					 	left: 205px;
+					 	color: @item_name_color;
+					 }
+					 .status_num::after{
+					 	content: "%";
+					 }
+				}
+				button{
+					margin-top: 5px;
+					padding: 4px 27px;
 				}
 			}
 		}
@@ -330,7 +453,7 @@ body{
 	}
 }
 
-@media (max-width: 430px){
+@media (max-width: 443px){
 	header{
 		h1{
 			font-size: 2.3em !important;
@@ -341,9 +464,19 @@ body{
 		}
 	}
 	section{
+
+		#switcher{
+			label{
+				left: 20px !important;	
+			}
+		}
+
 		#dota_form, #csgo_form{
 			.radiobuttons{
 				font-size: 0.95em;
+			}
+			label:first-child + div{
+				margin-bottom: 11px !important;
 			}
 			label[for*="_price"]{
 				font-size: 1.1em;

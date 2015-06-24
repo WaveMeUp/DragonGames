@@ -26,6 +26,9 @@ body header ul.navbar_icon li {
   padding: 0 35px;
   font-size: 2.7em;
 }
+body header ul.navbar_list {
+  z-index: 99;
+}
 body header ul.navbar_list li {
   margin: 40px 0 0 0;
 }
@@ -50,21 +53,22 @@ body section {
   position: relative;
 }
 body section #switcher {
-  margin: 100px 0 0 0;
+  margin-top: 100px;
   position: relative;
-  top: 5px;
-  left: 50px;
 }
 body section #switcher input {
   display: none;
 }
 body section #switcher label {
+  position: relative;
+  top: 5px;
+  left: 50px;
   font-weight: 200;
   font-size: 1.3em;
-  color: #B8BAB3;
-  border-top: 2px solid #B8BAB3;
-  border-right: 2px solid #B8BAB3;
-  border-left: 2px solid #B8BAB3;
+  color: #b8bab3;
+  border-top: 2px solid #b8bab3;
+  border-right: 2px solid #b8bab3;
+  border-left: 2px solid #b8bab3;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   padding: 5px 30px;
@@ -75,9 +79,6 @@ body section #switcher input:checked + label {
   color: #282b34;
   background: url("../img/overlay.png") repeat white;
   border-color: #282b34 #282b34 white #282b34;
-}
-body section form {
-  position: absolute;
 }
 body section form#csgo_form {
   display: none;
@@ -137,6 +138,100 @@ body section form#csgo_form button[type="submit"] {
 body section form#dota_form .search,
 body section form#csgo_form .search {
   margin-left: 58px;
+}
+body section #items_list {
+  margin-top: 15px;
+}
+body section #items_list .button_more {
+  margin-top: 30px;
+}
+body section #items_list .button_more button {
+  padding: 10px 30px;
+}
+body section #items_list div[class*="col-"] {
+  text-align: center;
+}
+body section #items_list .exist_item,
+body section #items_list .new_item {
+  background: url("../img/overlay.png") repeat #282b34;
+  border-radius: 10px;
+  height: 350px;
+  width: 262.5px;
+  margin-right: 0;
+  text-align: center;
+  margin: 25px auto 0 auto;
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+}
+body section #items_list .exist_item img,
+body section #items_list .new_item img {
+  margin-top: 30px;
+}
+body section #items_list .exist_item .item_price::after,
+body section #items_list .new_item .item_price::after {
+  content: " р.";
+}
+body section #items_list .new_item:hover {
+  box-shadow: 0 0 25px #d2322d;
+}
+body section #items_list .new_item .item_name {
+  color: #83868d;
+  margin-top: 30px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 1.5em;
+}
+body section #items_list .new_item .item_price {
+  color: #e97770;
+  margin-top: 10px;
+  letter-spacing: 5px;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+body section #items_list .new_item button {
+  font-size: 1.4em;
+  margin-top: 25px;
+  padding: 8px 35px;
+}
+body section #items_list .exist_item:hover {
+  box-shadow: 0 0 25px #2c6899;
+}
+body section #items_list .exist_item .item_name {
+  color: #83868d;
+  margin-top: 10px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 1.5em;
+}
+body section #items_list .exist_item .item_price {
+  color: #e97770;
+  margin-top: 10px;
+  letter-spacing: 5px;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+body section #items_list .exist_item .current_status {
+  margin-top: 20px;
+  position: relative;
+}
+body section #items_list .exist_item .current_status .progress {
+  margin-left: 36px;
+  width: 157px;
+}
+body section #items_list .exist_item .current_status .status_num {
+  font-size: 1.3em;
+  font-weight: bold;
+  position: absolute;
+  top: -1px;
+  left: 205px;
+  color: #83868d;
+}
+body section #items_list .exist_item .current_status .status_num::after {
+  content: "%";
+}
+body section #items_list .exist_item button {
+  margin-top: 5px;
+  padding: 4px 27px;
 }
 @media (min-width: 769px) {
   #dota_form label,
@@ -261,7 +356,7 @@ body section form#csgo_form .search {
     padding-right: 0 !important;
   }
 }
-@media (max-width: 430px) {
+@media (max-width: 443px) {
   header h1 {
     font-size: 2.3em !important;
   }
@@ -269,9 +364,16 @@ body section form#csgo_form .search {
     font-size: 1.5em !important;
     margin-top: 21px !important;
   }
+  section #switcher label {
+    left: 20px !important;
+  }
   section #dota_form .radiobuttons,
   section #csgo_form .radiobuttons {
     font-size: 0.95em;
+  }
+  section #dota_form label:first-child + div,
+  section #csgo_form label:first-child + div {
+    margin-bottom: 11px !important;
   }
   section #dota_form label[for*="_price"],
   section #csgo_form label[for*="_price"] {

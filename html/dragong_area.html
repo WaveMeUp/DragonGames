@@ -51,11 +51,15 @@
 	<section class="container">
 
 		<!-- Form's Switcher between Dota and CS:GO -->
-		<div id="switcher">
-			<input type="radio" name="form_name" value="csgo" id="csgo">
-			<label for="csgo">CS:GO</label>
-			<input type="radio" name="form_name" value="dota" id="dota" checked>
-			<label for="dota">Dota 2</label>
+		<div class="row">
+			<div class="col-lg-4">
+				<div id="switcher">
+					<input type="radio" name="form_name" value="csgo" id="csgo">
+					<label for="csgo">CS:GO</label>
+					<input type="radio" name="form_name" value="dota" id="dota" checked>
+					<label for="dota">Dota 2</label>
+				</div>
+			</div>
 		</div>
 		<!-- Dota Form -->
 		<form action="list.php" method="POST" id="dota_form" role="form">
@@ -109,14 +113,14 @@
 			<div class="row">
 				
 				<!-- Price Input -->
-				<label for="start_price" class="col-lg-2 col-md-2 col-sm-3 col-xs-4"> Цена от </label>
-				<div class="col-lg-1 col-md-1  col-sm-3 col-xs-8">
+				<label for="start_price" class="col-lg-2 col-md-2 col-sm-3 col-xs-5"> Цена от </label>
+				<div class="col-lg-1 col-md-1  col-sm-3 col-xs-7">
 					<input type="text" class="form-control input-lg" placeholder="0" id="start_price">
 				</div>
 				
-				<label for="finish_price" class="col-lg-1 col-md-1 col-sm-2 col-xs-4"> до </label>
-				<div class="col-lg-1 col-md-1 col-sm-3 col-xs-8">
-					<input type="text" class="form-control input-lg" placeholder="10000" id="finish_price">
+				<label for="finish_price" class="col-lg-1 col-md-1 col-sm-2 col-xs-5"> до </label>
+				<div class="col-lg-1 col-md-1 col-sm-3 col-xs-7">
+					<input type="text" class="form-control input-lg" placeholder="0" id="finish_price">
 				</div>
 
 				<!-- Search Input -->
@@ -194,7 +198,7 @@
 				
 				<label for="finish_price" class="col-lg-1 col-md-1 col-sm-2 col-xs-4"> до </label>
 				<div class="col-lg-1 col-md-1 col-sm-3 col-xs-8">
-					<input type="text" class="form-control input-lg" placeholder="10000" id="finish_price">
+					<input type="text" class="form-control input-lg" placeholder="0" id="finish_price">
 				</div>
 
 				<!-- Search Input -->
@@ -209,6 +213,137 @@
 			</div>
 			
 		</form>
+		
+		<!-- List of Found Items -->
+		<div id="items_list">
+			
+			<!-- Row with Items -->
+			<div class="row">
+				
+				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+					<div class="exist_item">
+						<img src="../img/dragonclaw hook.png" height="120" width="170" alt="">
+						<div class="item_name">Dragonclaw Hook</div>
+						<div class="item_price">8500</div>
+						<div class="current_status">
+							<div class="progress progress-striped">
+								<div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+								</div>
+							</div>
+							<div class="status_num">20</div>
+						</div>
+						<button type="button" class="btn btn-primary btn-lg">Присоединиться</button>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+					<div class="exist_item">
+						<img src="../img/dragonclaw hook.png" height="120" width="170" alt="">
+						<div class="item_name">Dragonclaw Hook</div>
+						<div class="item_price">8500</div>
+						<div class="current_status">
+							<div class="progress progress-striped">
+								<div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+								</div>
+							</div>
+							<div class="status_num">55</div>
+						</div>
+						<button type="button" class="btn btn-primary btn-lg">Присоединиться</button>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+					<div class="exist_item">
+						<img src="../img/dragonclaw hook.png" height="120" width="170" alt="">
+						<div class="item_name">Dragonclaw Hook</div>
+						<div class="item_price">8500</div>
+						<div class="current_status">
+							<div class="progress progress-striped">
+								<div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+								</div>
+							</div>
+							<div class="status_num">89</div>
+						</div>
+						<button type="button" class="btn btn-primary btn-lg">Присоединиться</button>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+					<div class="new_item">
+						<img src="../img/dragonclaw hook.png" height="120" width="170" alt="">
+						<div class="item_name">Dragonclaw Hook</div>
+						<div class="item_price">8500</div>
+						<button type="button" class="btn btn-danger btn-lg">Создать</button>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+					<div class="exist_item">
+						<img src="../img/dragonclaw hook.png" height="120" width="170" alt="">
+						<div class="item_name">Dragonclaw Hook</div>
+						<div class="item_price">8500</div>
+						<div class="current_status">
+							<div class="progress progress-striped">
+								<div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+								</div>
+							</div>
+							<div class="status_num">35</div>
+						</div>
+						<button type="button" class="btn btn-primary btn-lg">Присоединиться</button>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+					<div class="exist_item">
+						<img src="../img/dragonclaw hook.png" height="120" width="170" alt="">
+						<div class="item_name">Dragonclaw Hook</div>
+						<div class="item_price">8500</div>
+						<div class="current_status">
+							<div class="progress progress-striped">
+								<div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+								</div>
+							</div>
+							<div class="status_num">96</div>
+						</div>
+						<button type="button" class="btn btn-primary btn-lg">Присоединиться</button>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+					<div class="exist_item">
+						<img src="../img/dragonclaw hook.png" height="120" width="170" alt="">
+						<div class="item_name">Dragonclaw Hook</div>
+						<div class="item_price">8500</div>
+						<div class="current_status">
+							<div class="progress progress-striped">
+								<div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+								</div>
+							</div>
+							<div class="status_num">60</div>
+						</div>
+						<button type="button" class="btn btn-primary btn-lg">Присоединиться</button>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+					<div class="exist_item">
+						<img src="../img/dragonclaw hook.png" height="120" width="170" alt="">
+						<div class="item_name">Dragonclaw Hook</div>
+						<div class="item_price">8500</div>
+						<div class="current_status">
+							<div class="progress progress-striped">
+								<div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+								</div>
+							</div>
+							<div class="status_num">20</div>
+						</div>
+						<button type="button" class="btn btn-primary btn-lg">Присоединиться</button>
+					</div>
+				</div>
+			<!-- </row> -->
+			</div>
+
+			<!-- Button "More" -->
+			<div class="row button_more">
+				<div class="col-lg-2 col-lg-offset-5">
+					<button type="button" class="btn btn-default btn-lg">Еще</button>
+				</div>
+			</div>
+		<!-- </#item_list> -->
+		</div>
 	</section>
 	
 	<!-- Footer -->
