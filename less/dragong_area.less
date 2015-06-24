@@ -12,6 +12,7 @@
 @switcher_check_color: @head_foot_color;
 @new_item_shadow: #d2322d;
 @exist_item_shadow: #2c6899;
+@footer_text_color: @item_name_color;
 
 // size-variables
 @header_height: 100px; 
@@ -298,6 +299,69 @@ body{
 				button{
 					margin-top: 5px;
 					padding: 4px 27px;
+				}
+			}
+		}
+	}
+
+	// Footer Styles
+	footer{
+		margin-top: 100px;
+		box-shadow: 0 0 10px rgba(0,0,0,1);
+		background: url(@texture) repeat @head_foot_color;
+		
+		// General Styles for Navigation and Copyright
+		div[class*="col-"], nav[class*="col-"]{
+			text-align: center;
+		}
+		li{
+			list-style-type: none;
+			display: inline-block;
+		}
+
+		// Navigation Styles
+		nav{
+			margin-top: 30px;
+			
+			ul{
+				margin: 0 auto;
+				padding-left: 0;
+			}
+			li{
+				padding: 0 7px;
+				font-size: 1.2em;
+				margin: 0 5px;
+				
+				a{
+					color: @footer_text_color;
+					transition: all .3s;
+					&:hover, &:focus{
+						color: @navigation_color;
+					}
+				}
+			}
+		}
+
+		// Copyright
+		#copyright{
+			margin-top: 15px;
+			margin-bottom: 40px;
+
+			ul{
+				margin: 0 auto;
+				padding: 4px 0;
+				width: 175px;
+				border: 1px solid @footer_text_color;
+				border-radius: 8px;
+			}
+			li{
+				color: @footer_text_color;
+				font-size: 0.9em;
+				font-weight: bold;
+				padding: 0 6px;
+				
+				&:first-child{
+					border-right: 1px solid @footer_text_color;
 				}
 			}
 		}

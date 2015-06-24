@@ -233,6 +233,59 @@ body section #items_list .exist_item button {
   margin-top: 5px;
   padding: 4px 27px;
 }
+body footer {
+  margin-top: 100px;
+  box-shadow: 0 0 10px #000000;
+  background: url("../img/overlay.png") repeat #282b34;
+}
+body footer div[class*="col-"],
+body footer nav[class*="col-"] {
+  text-align: center;
+}
+body footer li {
+  list-style-type: none;
+  display: inline-block;
+}
+body footer nav {
+  margin-top: 30px;
+}
+body footer nav ul {
+  margin: 0 auto;
+  padding-left: 0;
+}
+body footer nav li {
+  padding: 0 7px;
+  font-size: 1.2em;
+  margin: 0 5px;
+}
+body footer nav li a {
+  color: #83868d;
+  transition: all .3s;
+}
+body footer nav li a:hover,
+body footer nav li a:focus {
+  color: #eeeeee;
+}
+body footer #copyright {
+  margin-top: 15px;
+  margin-bottom: 40px;
+}
+body footer #copyright ul {
+  margin: 0 auto;
+  padding: 4px 0;
+  width: 175px;
+  border: 1px solid #83868d;
+  border-radius: 8px;
+}
+body footer #copyright li {
+  color: #83868d;
+  font-size: 0.9em;
+  font-weight: bold;
+  padding: 0 6px;
+}
+body footer #copyright li:first-child {
+  border-right: 1px solid #83868d;
+}
 @media (min-width: 769px) {
   #dota_form label,
   #csgo_form label {
