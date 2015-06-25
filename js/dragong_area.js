@@ -72,7 +72,15 @@ $(function(){
 			});
 	}
 
+	var byDefault=function(){
+		if( $("article").css("margin-top") != "none")
+		{
+			$("#switcher").css("margin-top", "30px");
+		}
+	}
+
 	// Call by Default
 	draw_lines();
 	toOneColumn();
+	byDefault();
 });

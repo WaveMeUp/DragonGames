@@ -49,6 +49,12 @@ body header ul li a:focus {
   color: #eeeeee;
   opacity: 1;
 }
+body article {
+  margin-top: 50px;
+}
+body article .alert {
+  padding-left: 30px;
+}
 body section {
   position: relative;
 }
