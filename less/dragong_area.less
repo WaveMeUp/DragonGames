@@ -211,7 +211,7 @@ body{
 			.exist_item, .new_item{
 				background: url(@texture) repeat @head_foot_color;
 				border-radius: 10px;
-				height: 350px;
+				// height: 350px;
 				width: 262.5px;
 				margin-right: 0;
 				text-align: center;
@@ -220,11 +220,14 @@ body{
 				transition: box-shadow .3s;
 
 				img{
+					height: 35%;
+					width: 66%;
 					margin-top: 30px;
 				}
 				.item_price::after{
 					content: " р.";
 				}
+				
 			}
 
 			// Styles for New Item
@@ -251,6 +254,7 @@ body{
 					font-size: 1.4em;
 					margin-top: 25px;
 					padding: 8px 35px;
+					margin-bottom: 30px;
 				}
 			}
 
@@ -281,8 +285,8 @@ body{
 					position: relative;
 
 					 .progress{
-						margin-left: 36px;
-						width: 157px;
+						margin-left: 9%;
+						width: 63%;
 					 }
 					 .status_num{
 					 	font-size: 1.3em;
@@ -297,8 +301,9 @@ body{
 					 }
 				}
 				button{
+					margin-bottom: 20px;
 					margin-top: 5px;
-					padding: 4px 27px;
+					padding: 4px 14%;
 				}
 			}
 		}
@@ -436,6 +441,23 @@ body{
 			padding-left: 0 !important;
 		}
 	}
+
+	
+}
+
+@media (max-width: 992px) and (min-width: 769px){
+	#items_list{
+
+		.exist_item, .new_item{
+			width: 225px !important;
+		}
+		.status_num{
+			left: 183px !important;
+		}
+		.progress{
+			margin-left: 8% !important;
+		}
+	}
 }
 
 @media (max-width: 768px){
@@ -517,6 +539,50 @@ body{
 	}
 }
 
+@media (max-width: 661px){
+	#items_list{
+
+		.exist_item, .new_item{
+			width: 225px !important;
+		}
+		.status_num{
+			left: 175px !important;
+		}
+		.progress{
+			margin-left: 8% !important;
+		}
+	}
+}
+
+@media (max-width: 530px){
+	#items_list{
+
+		.exist_item, .new_item{
+			width: 192px !important;
+
+			.item_price, .item_name{
+				font-size: 1.1em !important;
+			}
+			button{
+				padding: 4px 9% !important;
+				font-size: 1.1em;
+			}
+		}
+		.status_num{
+			left: 147px !important;
+			font-size: 1.2em !important;
+		}
+		.progress{
+			margin-left: 12% !important;
+			width: 56% !important;
+		}
+		
+		.new_item button{
+			margin-bottom: 33px !important;
+		}
+	}
+}
+
 @media (max-width: 443px){
 	header{
 		h1{
@@ -544,6 +610,36 @@ body{
 			}
 			label[for*="_price"]{
 				font-size: 1.1em;
+			}
+		}
+
+		#items_list{
+			.row{
+				.col-xs-6{
+					padding-right: 0 !important;
+					padding-left: 0 !important;
+				}
+				.col-xs-6:nth-child(2n+1){
+					text-align: left;
+				}
+				.col-xs-6:nth-child(2n){
+					text-align: right;
+				}
+			}
+			.exist_item, .new_item{
+				width: 140px !important;
+
+				.item_price, .item_name{
+					font-size: 1em !important;
+				}
+				button{
+					padding: 4px 4px !important;
+					font-size: 1em;
+				}
+			}
+			.status_num{
+				left: 100px !important;
+				font-size: 1.2em !important;
 			}
 		}
 	}

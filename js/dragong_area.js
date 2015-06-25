@@ -57,10 +57,10 @@ $(function(){
 		toOneColumn();
 	})
 
-	// Convert List to One Column on screen less than 611px
+	// Convert List to One Column on screen less than 285px
 	var toOneColumn=function(){
 		var width=$(window).width();
-		if( width < 611)
+		if( width < 285)
 			$("#items_list div.col-xs-6").each(function(index, element){
 				$(element).removeClass("col-xs-6");
 				$(element).addClass("col-xs-12");

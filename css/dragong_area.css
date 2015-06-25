@@ -155,7 +155,6 @@ body section #items_list .exist_item,
 body section #items_list .new_item {
   background: url("../img/overlay.png") repeat #282b34;
   border-radius: 10px;
-  height: 350px;
   width: 262.5px;
   margin-right: 0;
   text-align: center;
@@ -165,6 +164,8 @@ body section #items_list .new_item {
 }
 body section #items_list .exist_item img,
 body section #items_list .new_item img {
+  height: 35%;
+  width: 66%;
   margin-top: 30px;
 }
 body section #items_list .exist_item .item_price::after,
@@ -192,6 +193,7 @@ body section #items_list .new_item button {
   font-size: 1.4em;
   margin-top: 25px;
   padding: 8px 35px;
+  margin-bottom: 30px;
 }
 body section #items_list .exist_item:hover {
   box-shadow: 0 0 25px #2c6899;
@@ -215,8 +217,8 @@ body section #items_list .exist_item .current_status {
   position: relative;
 }
 body section #items_list .exist_item .current_status .progress {
-  margin-left: 36px;
-  width: 157px;
+  margin-left: 9%;
+  width: 63%;
 }
 body section #items_list .exist_item .current_status .status_num {
   font-size: 1.3em;
@@ -230,8 +232,9 @@ body section #items_list .exist_item .current_status .status_num::after {
   content: "%";
 }
 body section #items_list .exist_item button {
+  margin-bottom: 20px;
   margin-top: 5px;
-  padding: 4px 27px;
+  padding: 4px 14%;
 }
 body footer {
   margin-top: 100px;
@@ -342,6 +345,18 @@ body footer #copyright li:first-child {
     padding-left: 0 !important;
   }
 }
+@media (max-width: 992px) and (min-width: 769px) {
+  #items_list .exist_item,
+  #items_list .new_item {
+    width: 225px !important;
+  }
+  #items_list .status_num {
+    left: 183px !important;
+  }
+  #items_list .progress {
+    margin-left: 8% !important;
+  }
+}
 @media (max-width: 768px) {
   header h1 {
     padding-left: 15px;
@@ -409,6 +424,46 @@ body footer #copyright li:first-child {
     padding-right: 0 !important;
   }
 }
+@media (max-width: 661px) {
+  #items_list .exist_item,
+  #items_list .new_item {
+    width: 225px !important;
+  }
+  #items_list .status_num {
+    left: 175px !important;
+  }
+  #items_list .progress {
+    margin-left: 8% !important;
+  }
+}
+@media (max-width: 530px) {
+  #items_list .exist_item,
+  #items_list .new_item {
+    width: 192px !important;
+  }
+  #items_list .exist_item .item_price,
+  #items_list .new_item .item_price,
+  #items_list .exist_item .item_name,
+  #items_list .new_item .item_name {
+    font-size: 1.1em !important;
+  }
+  #items_list .exist_item button,
+  #items_list .new_item button {
+    padding: 4px 9% !important;
+    font-size: 1.1em;
+  }
+  #items_list .status_num {
+    left: 147px !important;
+    font-size: 1.2em !important;
+  }
+  #items_list .progress {
+    margin-left: 12% !important;
+    width: 56% !important;
+  }
+  #items_list .new_item button {
+    margin-bottom: 33px !important;
+  }
+}
 @media (max-width: 443px) {
   header h1 {
     font-size: 2.3em !important;
@@ -431,5 +486,34 @@ body footer #copyright li:first-child {
   section #dota_form label[for*="_price"],
   section #csgo_form label[for*="_price"] {
     font-size: 1.1em;
+  }
+  section #items_list .row .col-xs-6 {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+  section #items_list .row .col-xs-6:nth-child(2n+1) {
+    text-align: left;
+  }
+  section #items_list .row .col-xs-6:nth-child(2n) {
+    text-align: right;
+  }
+  section #items_list .exist_item,
+  section #items_list .new_item {
+    width: 140px !important;
+  }
+  section #items_list .exist_item .item_price,
+  section #items_list .new_item .item_price,
+  section #items_list .exist_item .item_name,
+  section #items_list .new_item .item_name {
+    font-size: 1em !important;
+  }
+  section #items_list .exist_item button,
+  section #items_list .new_item button {
+    padding: 4px 4px !important;
+    font-size: 1em;
+  }
+  section #items_list .status_num {
+    left: 100px !important;
+    font-size: 1.2em !important;
   }
 }
