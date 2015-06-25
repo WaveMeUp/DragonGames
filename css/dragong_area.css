@@ -6,7 +6,7 @@ body header {
   box-shadow: 0 0 10px #000000;
 }
 body header h1 {
-  font-family: "Bitter";
+  font-family: "Roboto Slab";
   color: white;
   margin: 25px 0;
   font-size: 3.3em;
@@ -40,7 +40,7 @@ body header ul li a {
   color: #eeeeee;
   opacity: .7;
   font-size: 1.6em;
-  font-family: "PT Sans";
+  font-family: "Arial";
   transition: opacity 0.15s ease-in-out;
 }
 body header ul li a:hover,
