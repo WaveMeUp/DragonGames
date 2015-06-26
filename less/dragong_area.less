@@ -1,89 +1,9 @@
-// path-variables
-@texture: "../img/overlay.png";
-
-// color-variables
-@bg_color : #f3f3f3; 
-@head_foot_color: #282b34;
-@pink: #e97770;
-@navigation_color: #eeeeee;
-@prompt_nav_border_color: #aaaaaa;
-@item_name_color: #83868d;
-@switcher_color: #B8BAB3;
-@switcher_check_color: @head_foot_color;
-@new_item_shadow: #d2322d;
-@exist_item_shadow: #2c6899;
-@footer_text_color: @item_name_color;
-
-// size-variables
-@header_height: 100px; 
-
-// font-variables
-@head_title_font: "Roboto Slab";
+@import url(variables.less);
+@import url(header.less);
+@import url(footer.less);
 
 body{
 	background: url(@texture) repeat @bg_color;
-
-	header{
-		background: url(@texture) repeat @head_foot_color;
-		box-shadow: 0 0 10px rgba(0,0,0,1);
-		
-		//title styles
-		h1{
-			font-family: @head_title_font;
-			color: white;
-			margin: @header_height/4 0;
-			font-size: 3.3em;
-			float: left;
-		}
-
-		// navigation styles
-		ul{
-			list-style: none;
-			float: right;
-			margin: 0;
-			padding: 0;
-			
-			// Styles for icon
-			&.navbar_icon{
-				display: none;
-				li{
-					margin-top: 10px;
-					padding: 0 35px;
-					font-size: 2.7em;
-				}
-			}
-			
-			// Styles for list
-			&.navbar_list{
-				z-index: 99;
-
-				li{
-					margin: @header_height/2.5 0 0 0;
-				}
-			}
-			
-			// General styles for list and icon
-			li{
-				display: inline-block;
-				
-				a{
-					padding: 0 25px;
-					color: @navigation_color;
-					opacity: .7;
-					font-size: 1.6em;
-					font-family: "Arial";
-					transition: opacity .15s ease-in-out;
-
-					&:hover, &:focus{
-						text-decoration: none;
-						color: @navigation_color;
-						opacity: 1;
-					}
-				}
-			}
-
-		}
-	}
 
 	article{
 		margin-top: 50px;
@@ -317,68 +237,7 @@ body{
 		}
 	}
 
-	// Footer Styles
-	footer{
-		margin-top: 100px;
-		box-shadow: 0 0 10px rgba(0,0,0,1);
-		background: url(@texture) repeat @head_foot_color;
-		
-		// General Styles for Navigation and Copyright
-		div[class*="col-"], nav[class*="col-"]{
-			text-align: center;
-		}
-		li{
-			list-style-type: none;
-			display: inline-block;
-		}
-
-		// Navigation Styles
-		nav{
-			margin-top: 30px;
-			
-			ul{
-				margin: 0 auto;
-				padding-left: 0;
-			}
-			li{
-				padding: 0 7px;
-				font-size: 1.2em;
-				margin: 0 5px;
-				
-				a{
-					color: @footer_text_color;
-					transition: all .3s;
-					&:hover, &:focus{
-						color: @navigation_color;
-					}
-				}
-			}
-		}
-
-		// Copyright
-		#copyright{
-			margin-top: 15px;
-			margin-bottom: 40px;
-
-			ul{
-				margin: 0 auto;
-				padding: 4px 0;
-				width: 175px;
-				border: 1px solid @footer_text_color;
-				border-radius: 8px;
-			}
-			li{
-				color: @footer_text_color;
-				font-size: 0.9em;
-				font-weight: bold;
-				padding: 0 6px;
-				
-				&:first-child{
-					border-right: 1px solid @footer_text_color;
-				}
-			}
-		}
-	}
+	
 
 	#myModal{
 		text-align: center;
@@ -488,68 +347,7 @@ body{
 }
 
 @media (max-width: 768px){
-	header{	
-		h1{
-			padding-left: 15px;
-		}
-		ul{
-			// Create prompt nav menu
-			&.navbar_list{
-				display: none;
-				background: white;
-				border: 2px solid @prompt_nav_border_color; 
-				border-radius: 10px;
-				box-shadow: 0 0 10px rgba(0,0,0,0.2);
-				position: absolute;
-				top: 120px;
-				right: 8px;
-
-				li:last-child{
-					border-bottom: none;
-				}
-				li{
-					display: block;
-					margin: 0 !important;
-					padding: 10px 0;
-					border-bottom: 2px solid @prompt_nav_border_color;
-
-					a{
-						padding: 0 25px;
-						color: @head_foot_color !important;
-						opacity: 1 !important;
-						&:active, &:focus{
-							color: @pink !important;
-						}
-					}
-				}
-
-				// Create triangle from two elements: before and after
-				&::before {
-					content: '';
-					position: absolute; /* Абсолютное позиционирование */
-					right: 36px; bottom: 104px; /* Положение треугольника */
-					border: 20px solid transparent;
-					border-bottom: 20px solid @prompt_nav_border_color;
-				}
-				&::after {
-					content: '';
-					position: absolute; /* Абсолютное позиционирование */
-					right: 36px; bottom: 101px; /* Положение треугольника */
-					border: 20px solid transparent;
-					border-bottom: 20px solid white;
-				}
-			}
-
-			//Display navigation icon for small screens
-			&.navbar_icon{
-				display: block !important;
-				li{
-					padding: 0 !important;
-				}
-			}
-		}
-	}
-
+	
 	section{
 
 		// Dota-form Styles
@@ -617,15 +415,7 @@ body{
 }
 
 @media (max-width: 443px){
-	header{
-		h1{
-			font-size: 2.1em !important;
-		}
-		ul.navbar_icon li{
-			font-size: 1.5em !important;
-			margin-top: 21px !important;
-		}
-	}
+
 	section{
 
 		#switcher{

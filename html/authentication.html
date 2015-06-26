@@ -1,0 +1,107 @@
+<!-- 
+	Designed by Andrei Khoroshavin
+	< horoshavin-andr@mail.ru >
+	https://github.com/iSuperMan
+-->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	
+	<title>Dragon Games</title>
+	
+	<!-- HTML5 and CSS3 sustain for old version of IE  -->
+	<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+	<link rel="stylesheet" href="../packages/normalize.css/normalize.css">
+	<link rel="stylesheet" href="../packages/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../packages/bootstrap/dist/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="../css/authentication.css">
+	<link rel="stylesheet" href="../packages/font-awesome/css/font-awesome.min.css">
+</head>
+<body>
+	<!-- Header -->
+	<header>
+			<!-- Using container -->
+			<div class="container">
+				<!-- Title -->
+				<h1> Dragon Games </h1>
+				
+				<!-- Navigation -->
+				<nav>
+					<ul class="navbar_list" id="navigation">
+						<li><a href="#">Регистрация</a></li>
+						<li><a href="#">Вход</a></li>
+					</ul>	
+					<ul class="navbar_icon" id="button_navigation">
+						<li><a href="#">&#9776;</a></li>
+					</ul>
+				</nav>
+			</div>
+	</header>
+	
+	<section class="container">
+		<div class="col-lg-4 col-md-5 col-sm-6 col-xs-10 col-xs-offset-1 col-sm-offset-3 col-md-offset-4 col-lg-offset-4">
+			<h1> Вход </h1>
+			<form action="" class="form-horizontal" role="form">
+				<div class="form-group">
+					<div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 col-xs-offset-1 col-sm-offset-1 col-md-offset-2 col-lg-offset-2">
+						<input type="email" class="form-control" id="inputEmail" placeholder="Email">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 col-xs-offset-1 col-sm-offset-1 col-md-offset-2 col-lg-offset-2">
+						<input type="password" class="form-control" id="inputPassword" placeholder="Пароль">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 col-xs-offset-1 col-sm-offset-1 col-md-offset-2 col-lg-offset-2">
+				    	<button type="submit" class="btn btn-info btn-lg btn-block">Войти</button>
+					</div>
+					<!-- <div class="col-lg-2">
+				    	<button type="button" class="btn btn-link">Регистрация</button>
+					</div> -->
+				</div>
+			</form>
+		</div>
+	</section>
+	
+	<!-- Footer -->
+	<footer>
+		<div class="container">
+			
+			<!-- Navigation -->
+			<div class="row">
+				<nav class="col-lg-4 col-lg-offset-4">
+					<ul>
+						<li> <a href="#">Главная</a> </li>
+						<li> <a href="#">Правила</a> </li>
+						<li> <a href="#">Контакты</a> </li>
+					</ul>
+				</nav>
+			</div>
+
+			<!-- Copyright -->
+			<div class="row">
+				<div id="copyright" class="col-lg-4 col-lg-offset-4">
+					<ul>
+						<li>&#169; Dragon Games</li>
+						<li>2015</li>
+					</ul>					
+				</div>
+			</div>
+		</div>		
+	</footer>
+
+	<!-- Scripts -->
+	<script src="../packages/jquery/dist/jquery.min.js"></script>
+	<script src="../packages/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="../js/authentication.js"></script>
+</body>
+</html>
