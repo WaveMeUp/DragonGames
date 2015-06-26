@@ -295,6 +295,44 @@ body footer #copyright li {
 body footer #copyright li:first-child {
   border-right: 1px solid #83868d;
 }
+body #modal_overlay {
+  display: none;
+  opacity: 0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.65);
+  cursor: pointer;
+}
+body #modal_window {
+  box-sizing: border-box;
+  display: none;
+  opacity: 0;
+  position: fixed;
+  width: 800px;
+  height: 650px;
+  top: 15%;
+  left: 25%;
+  border-radius: 10px;
+  background: white;
+  text-align: center;
+}
+body #modal_window button {
+  margin-top: 7px;
+}
+body #modal_window img {
+  height: 150px;
+  width: 250px;
+  margin-top: 75px;
+}
+body #modal_window .title {
+  color: #b8bab3;
+  margin-top: 20px;
+  font-size: 2em;
+  color: #282b34;
+}
 @media (min-width: 769px) {
   #dota_form label,
   #csgo_form label {
@@ -429,6 +467,10 @@ body footer #copyright li:first-child {
   section #csgo_form .list {
     padding-right: 0 !important;
   }
+  #modal_window img {
+    height: 95px !important;
+    width: 150px !important;
+  }
 }
 @media (max-width: 661px) {
   #items_list .exist_item,
@@ -472,7 +514,7 @@ body footer #copyright li:first-child {
 }
 @media (max-width: 443px) {
   header h1 {
-    font-size: 2.3em !important;
+    font-size: 2.1em !important;
   }
   header ul.navbar_icon li {
     font-size: 1.5em !important;

@@ -379,7 +379,50 @@ body{
 			}
 		}
 	}
+
+	#modal_overlay{
+		display: none;
+		opacity: 0;
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background-color: rgba(0, 0, 0, .65);
+		cursor: pointer;
+	}
+	#modal_window{
+		box-sizing: border-box;
+		display: none;
+		opacity: 0;
+		position: fixed;
+		width: 800px;
+		height: 650px;
+		top: 15%;
+		left: 25%;
+		border-radius: 10px;
+		background: white;
+		text-align: center;
+		
+		button{
+			margin-top: 7px;
+		}
+		img{
+			height: 150px;
+			width: 250px;
+			margin-top: 75px;
+		}
+		.title{
+			color: @switcher_color;
+			margin-top: 20px;
+			font-size: 2em;
+			color: @head_foot_color;
+		}
+	}
 }
+
+
+// Media options
 @media (min-width: 769px){
 	
 	// Dota-form Styles
@@ -545,6 +588,12 @@ body{
 			}
 		}
 	}
+	#modal_window{
+		img{
+			height: 95px !important;
+			width: 150px !important;
+		}
+	}
 }
 
 @media (max-width: 661px){
@@ -594,7 +643,7 @@ body{
 @media (max-width: 443px){
 	header{
 		h1{
-			font-size: 2.3em !important;
+			font-size: 2.1em !important;
 		}
 		ul.navbar_icon li{
 			font-size: 1.5em !important;
