@@ -55,7 +55,6 @@ $(function(){
 	// Window Resize
 	$(window).resize(function(){
 		toOneColumn();
-		modalWindowInit();
 	})
 
 	// Convert List to One Column on screen less than 285px
@@ -81,61 +80,20 @@ $(function(){
 		}
 	}
 
-	// Setup top and left parameters
-	var modalWindowInit=function(){
-		// Scan Window's Sizes
-		var win_width=$(window).width();
-		var win_height=$(window).height();
-		
-		// Setup width
-		if( (win_width <= 992) && (win_width > 768) )
-			$("#modal_window").width((win_width-150));
-		else if( (win_width <= 768) && (win_width > 490) )
-			$("#modal_window").width((win_width-100));
-		else if( win_width <= 491 )
-			$("#modal_window").width((win_width-100));
-		
-		// Setup height
-		if( win_height <= 680)
-			$("#modal_window").height((win_height-50));
-		
-		// Calculate values
-		var left=(win_width-$("#modal_window").width())/2;
-		var top=($(window).height()-$("#modal_window").height())/2;
-		if (win_width <=768 ) left-=15; // Consider padding
-		
-		// Write values
-		$("#modal_window").css({"top": top, "left": left});
-		console.log(win_width+" "+$("#modal_window").width()+" "+ left)
-	}
-
 	// Item's click Event
 	$(".exist_item, .new_item").click(function(){
 		// display modal-window
-		$("#modal_window, #modal_overlay").css("display","block");
-		$("#modal_window, #modal_overlay").animate({"opacity": 1}, 300);
+		$('#myModal').modal();
 		// scan values
 		var img=$(this).find("img").attr("src");
 		var title=$(this).find(".item_name").text();
 		// insert values
-		$("#modal_window").find("img").attr("src", img);
-		$("#modal_window").find(".title").text(title);
-	});
-
-	// Close Modal-Window
-	$("#modal_window button, #modal_overlay").click(function(){
-		$("#modal_window, #modal_overlay").animate({"opacity": 0 }, 300, function(){
-			
-		});
-		setTimeout(function(){
-			$("#modal_window, #modal_overlay").css("display","none");
-		}, 500);
-		
+		$("#myModal").find("img").attr("src", img);
+		$("#myModal").find(".title").text(title);
 	});
 
 	// Call by Default
 	draw_lines();
 	toOneColumn();
 	byDefault();
-	modalWindowInit();
 });
