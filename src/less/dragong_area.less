@@ -1,0 +1,469 @@
+@import url("variables.less");
+@import url("header.less");
+@import url("footer.less");
+
+body{
+	background: url(@texture) repeat @bg_color;
+
+	article{
+		margin-top: 50px;
+
+		.alert{
+			padding-left: 30px;
+		}
+	}
+
+	section{
+		position: relative;
+
+		#switcher{
+			margin-top: 100px;
+			position: relative;
+
+			input{
+				display: none;
+			}
+			label{
+				position: relative;
+				top: 5px;
+				left: 50px;				
+				font-weight: 200;
+				font-size: 1.3em;
+				color: @switcher_color;
+				border-top: 2px solid @switcher_color;
+				border-right: 2px solid @switcher_color;
+				border-left: 2px solid @switcher_color;
+				border-top-left-radius: 8px;
+				border-top-right-radius: 8px;
+				padding: 5px 30px;
+				transition: all .5s;
+				cursor: pointer;
+			}
+			input:checked + label{
+				color: @switcher_check_color;
+				background: url(@texture) repeat white;
+				border-color: @switcher_check_color @switcher_check_color white @switcher_check_color;
+			}
+		}
+
+		form{
+			// General styles for both forms
+			// position: absolute;
+			
+			// By Default
+			&#csgo_form{
+				display: none;
+			}
+			// Styles for Dota and CS:GO
+			&#dota_form, &#csgo_form{
+				
+				background: url(@texture) repeat white;
+				padding: 50px 75px;
+				border-radius: 10px;
+				border: 2px solid @head_foot_color;
+				
+				.row:last-child{
+					margin-top: 30px;
+				}
+
+				// Radion-buttons Style
+				.radiobuttons{
+					
+					input{
+						display: none;
+					}
+					input:checked + label{
+						background:  rgba(0,0,0,.1);
+					}
+					label{
+						transition: background .4s;
+						border-radius: 5px;
+						cursor: pointer;
+						font-weight: 200;
+						font-size: 1.3em;
+						color: @head_foot_color;
+						padding: 5px 15px;
+						margin: 5px 35px 0 0;
+					}
+				}
+
+				// Lists Styles
+				.list{
+					padding: 0 25px 0 0;
+					margin-left: 25px;
+				}
+
+				// Price Options Styles
+				label{
+					font-size: 1.3em;
+					margin-top: 10px;
+				}
+				label + div{
+					padding: 0;
+				}
+
+				// Submit-button Styles
+				button[type="submit"]{
+					margin-right: 10px;
+					padding-left: 30px;
+					padding-right: 30px;
+					font-weight: bold;
+					font-size: 1.4em;
+				}
+
+				//Search Input Styles
+				.search{
+					margin-left: 58px;
+				}
+			}
+		}
+
+		#items_list{
+			margin-top: 15px;
+			
+			// Button "More"
+			.button_more{
+				margin-top: 30px;
+
+				button{
+					padding: 10px 30px;
+				}
+			}
+
+			// Centring Items inside Colums
+			div[class*="col-"]{
+				text-align: center;
+			}
+
+			// General Styles for Exits and New Items
+			.exist_item, .new_item{
+				background: url(@texture) repeat @head_foot_color;
+				border-radius: 10px;
+				// height: 350px;
+				width: 262.5px;
+				margin-right: 0;
+				text-align: center;
+				margin: 25px auto 0 auto;
+				cursor: pointer;
+				transition: box-shadow .3s;
+
+				img{
+					height: 35%;
+					width: 66%;
+					margin-top: 30px;
+				}
+				.item_price::after{
+					content: " р.";
+				}
+				
+			}
+
+			// Styles for New Item
+			.new_item{
+				
+				&:hover{
+					box-shadow: 0 0 25px @new_item_shadow;
+				}
+				.item_name{
+					color: @item_name_color;
+					margin-top: 30px;
+					font-weight: bold;
+					letter-spacing: 2px;
+					font-size: 1.5em;
+				}
+				.item_price{
+					color: @pink;
+					margin-top: 10px;
+					letter-spacing: 5px;
+					font-weight: bold;
+					font-size: 1.3em;
+				}
+				button{
+					font-size: 1.4em;
+					margin-top: 25px;
+					padding: 8px 35px;
+					margin-bottom: 30px;
+				}
+			}
+
+			// Styles for Exist Item
+			.exist_item{
+
+				&:hover{
+					box-shadow: 0 0 25px @exist_item_shadow;
+				}
+				
+				.item_name{
+					color: @item_name_color;
+					margin-top: 10px;
+					font-weight: bold;
+					letter-spacing: 2px;
+					font-size: 1.5em;
+				}
+				.item_price{
+					color: @pink;
+					margin-top: 10px;
+					letter-spacing: 5px;
+					font-weight: bold;
+					font-size: 1.3em;
+				}
+				
+				.current_status{
+					margin-top: 20px;
+					position: relative;
+
+					 .progress{
+						margin-left: 9%;
+						width: 63%;
+					 }
+					 .status_num{
+					 	font-size: 1.3em;
+					 	font-weight: bold;
+					 	position: absolute;
+					 	top: -1px;
+					 	left: 205px;
+					 	color: @item_name_color;
+					 }
+					 .status_num::after{
+					 	content: "%";
+					 }
+				}
+				button{
+					margin-bottom: 20px;
+					margin-top: 5px;
+					padding: 4px 14%;
+				}
+			}
+		}
+	}
+
+	
+
+	#myModal{
+		text-align: center;
+		
+		img{
+			height: 150px;
+			width: 250px;
+			margin-top: 75px;
+		}
+		.title{
+			color: @switcher_color;
+			margin-top: 20px;
+			font-size: 2em;
+			color: @head_foot_color;
+		}
+	}
+}
+
+
+// Media options
+@media (min-width: 769px){
+	
+	// Dota-form Styles
+	#dota_form, #csgo_form{
+
+		// Price Options Styles
+		label{
+			font-weight: 200;
+		}
+		label[for="start_price"]{
+			width: 108px;
+			padding: 0 0 0 28px;
+		}
+		label[for="finish_price"]{
+			padding: 0 0 0 23px;
+			width: 55px;
+		}
+	}
+}
+
+@media (max-width: 1200px){
+	
+	// Dota-Form Styles
+	#dota_form, #csgo_form{
+
+		// Radio-buttons Styles
+		.radiobuttons label{
+			margin-right: 14px !important;
+		}
+
+		//Lists Styles
+		.list{
+			margin-left: 0 !important;
+		}
+
+		// Search Input Styles
+		.search{
+			margin-left: 25px !important;
+		}
+	}
+}
+
+@media (max-width: 992px){
+
+	#dota_form, #csgo_form{
+
+		//Radio-buttons Styles
+		.radiobuttons{
+			text-align: center;
+			margin-bottom: 30px;
+		}
+		
+		// Price Options Styles
+		label[for*="_price"]{
+			padding-left: 0 !important;
+		}
+		label[for="finish_price"]{
+			margin-left: 30px;
+		}
+
+		// Search Input and Submit-button Styles
+		.search, .submit{
+			margin-top: 30px !important;
+		}
+		.search{
+			margin-left: 0 !important;
+			padding-left: 0 !important;
+		}
+	}
+
+	
+}
+
+@media (max-width: 992px) and (min-width: 769px){
+	#items_list{
+
+		.exist_item, .new_item{
+			width: 225px !important;
+		}
+		.status_num{
+			left: 183px !important;
+		}
+		.progress{
+			margin-left: 8% !important;
+		}
+	}
+}
+
+@media (max-width: 768px){
+	
+	section{
+
+		// Dota-form Styles
+		#dota_form, #csgo_form{
+
+			// Price Options Styles
+			label[for="finish_price"]{
+				margin-left: 0;
+			}
+			.list{
+				padding-right: 0 !important;
+			}
+		}
+	}
+	#modal_window{
+		img{
+			height: 95px !important;
+			width: 150px !important;
+		}
+	}
+}
+
+@media (max-width: 661px){
+	#items_list{
+
+		.exist_item, .new_item{
+			width: 225px !important;
+		}
+		.status_num{
+			left: 175px !important;
+		}
+		.progress{
+			margin-left: 8% !important;
+		}
+	}
+}
+
+@media (max-width: 530px){
+	#items_list{
+
+		.exist_item, .new_item{
+			width: 192px !important;
+
+			.item_price, .item_name{
+				font-size: 1.1em !important;
+			}
+			button{
+				padding: 4px 9% !important;
+				font-size: 1.1em;
+			}
+		}
+		.status_num{
+			left: 147px !important;
+			font-size: 1.2em !important;
+		}
+		.progress{
+			margin-left: 12% !important;
+			width: 56% !important;
+		}
+		
+		.new_item button{
+			margin-bottom: 33px !important;
+		}
+	}
+}
+
+@media (max-width: 443px){
+
+	section{
+
+		#switcher{
+			label{
+				left: 20px !important;	
+			}
+		}
+
+		#dota_form, #csgo_form{
+			.radiobuttons{
+				font-size: 0.95em;
+			}
+			label:first-child + div{
+				margin-bottom: 11px !important;
+			}
+			label[for*="_price"]{
+				font-size: 1.1em;
+			}
+		}
+
+		#items_list{
+			.row{
+				.col-xs-6{
+					padding-right: 0 !important;
+					padding-left: 0 !important;
+				}
+				.col-xs-6:nth-child(2n+1){
+					text-align: left;
+				}
+				.col-xs-6:nth-child(2n){
+					text-align: right;
+				}
+			}
+			.exist_item, .new_item{
+				width: 140px !important;
+
+				.item_price, .item_name{
+					font-size: 1em !important;
+				}
+				button{
+					padding: 4px 4px !important;
+					font-size: 1em;
+				}
+			}
+			.status_num{
+				left: 100px !important;
+				font-size: 1.2em !important;
+			}
+		}
+	}
+}

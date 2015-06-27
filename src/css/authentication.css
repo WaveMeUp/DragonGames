@@ -1,0 +1,223 @@
+@import url(http://fonts.googleapis.com/css?family=Comfortaa);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab);
+header {
+  background: url("../img/overlay.png") repeat #282b34;
+  -webkit-box-shadow: 0 0 10px #000000;
+     -moz-box-shadow: 0 0 10px #000000;
+          box-shadow: 0 0 10px #000000;
+}
+header h1 {
+  font-family: "Roboto Slab";
+  color: white;
+  margin: 25px 0;
+  font-size: 3.3em;
+  float: left;
+}
+header ul {
+  list-style: none;
+  float: right;
+  margin: 0;
+  padding: 0;
+}
+header ul.navbar_icon {
+  display: none;
+}
+header ul.navbar_icon li {
+  margin-top: 10px;
+  padding: 0 35px;
+  font-size: 2.7em;
+}
+header ul.navbar_list {
+  z-index: 99;
+}
+header ul.navbar_list li {
+  margin: 40px 0 0 0;
+}
+header ul li {
+  display: inline-block;
+}
+header ul li a {
+  padding: 0 25px;
+  color: #eeeeee;
+  opacity: .7;
+  font-size: 1.6em;
+  font-family: "Comfortaa";
+  -webkit-transition: opacity 0.15s ease-in-out;
+     -moz-transition: opacity 0.15s ease-in-out;
+       -o-transition: opacity 0.15s ease-in-out;
+          transition: opacity 0.15s ease-in-out;
+}
+header ul li a:hover,
+header ul li a:focus {
+  text-decoration: none;
+  color: #eeeeee;
+  opacity: 1;
+}
+@media (max-width: 768px) {
+  header h1 {
+    padding-left: 15px;
+  }
+  header ul.navbar_list {
+    display: none;
+    background: white;
+    border: 2px solid #aaaaaa;
+    -webkit-border-radius: 10px;
+       -moz-border-radius: 10px;
+            border-radius: 10px;
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+       -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 120px;
+    right: 8px;
+  }
+  header ul.navbar_list li:last-child {
+    border-bottom: none;
+  }
+  header ul.navbar_list li {
+    display: block;
+    margin: 0 !important;
+    padding: 10px 0;
+    border-bottom: 2px solid #aaaaaa;
+  }
+  header ul.navbar_list li a {
+    padding: 0 25px;
+    color: #282b34 !important;
+    opacity: 1 !important;
+  }
+  header ul.navbar_list li a:active,
+  header ul.navbar_list li a:focus {
+    color: #e97770 !important;
+  }
+  header ul.navbar_list::before {
+    content: '';
+    position: absolute;
+    /* Абсолютное позиционирование */
+    right: 36px;
+    bottom: 104px;
+    /* Положение треугольника */
+    border: 20px solid transparent;
+    border-bottom: 20px solid #aaaaaa;
+  }
+  header ul.navbar_list::after {
+    content: '';
+    position: absolute;
+    /* Абсолютное позиционирование */
+    right: 36px;
+    bottom: 101px;
+    /* Положение треугольника */
+    border: 20px solid transparent;
+    border-bottom: 20px solid white;
+  }
+  header ul.navbar_icon {
+    display: block !important;
+  }
+  header ul.navbar_icon li {
+    padding: 0 !important;
+  }
+}
+@media (max-width: 469px) {
+  header h1 {
+    font-size: 2.1em !important;
+  }
+  header ul.navbar_icon li {
+    font-size: 1.5em !important;
+    margin-top: 21px !important;
+  }
+}
+footer {
+  margin-top: 100px;
+  -webkit-box-shadow: 0 0 10px #000000;
+     -moz-box-shadow: 0 0 10px #000000;
+          box-shadow: 0 0 10px #000000;
+  background: url("../img/overlay.png") repeat #282b34;
+}
+footer div[class*="col-"],
+footer nav[class*="col-"] {
+  text-align: center;
+}
+footer li {
+  list-style-type: none;
+  display: inline-block;
+}
+footer nav {
+  margin-top: 30px;
+}
+footer nav ul {
+  margin: 0 auto;
+  padding-left: 0;
+}
+footer nav li {
+  padding: 0 7px;
+  font-size: 1.2em;
+  margin: 0 5px;
+}
+footer nav li a {
+  color: #83868d;
+  -webkit-transition: all .3s;
+     -moz-transition: all .3s;
+       -o-transition: all .3s;
+          transition: all .3s;
+}
+footer nav li a:hover,
+footer nav li a:focus {
+  color: #eeeeee;
+}
+footer #copyright {
+  margin-top: 15px;
+  margin-bottom: 40px;
+}
+footer #copyright ul {
+  margin: 0 auto;
+  padding: 4px 0;
+  width: 175px;
+  border: 1px solid #83868d;
+  -webkit-border-radius: 8px;
+     -moz-border-radius: 8px;
+          border-radius: 8px;
+}
+footer #copyright li {
+  color: #83868d;
+  font-size: 0.9em;
+  font-weight: bold;
+  padding: 0 6px;
+}
+footer #copyright li:first-child {
+  border-right: 1px solid #83868d;
+}
+body section {
+  margin-top: 50px;
+}
+body section h1 {
+  font-family: "Comfortaa";
+  margin-bottom: 30px;
+}
+body section > div {
+  text-align: center;
+}
+body section form {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  background: #fafafa;
+  border: 1px solid #dddddd;
+  -webkit-border-radius: 7px;
+     -moz-border-radius: 7px;
+          border-radius: 7px;
+}
+body section form .form-control {
+  height: 44px;
+  font-size: 17px;
+}
+body section form button {
+  margin-top: 20px;
+  font-family: "Comfortaa";
+}
+body footer {
+  margin-top: 100px;
+}
+body footer #copyright {
+  margin-bottom: 20px;
+}
+body footer nav {
+  margin-top: 20px;
+}
