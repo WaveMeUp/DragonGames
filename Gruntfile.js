@@ -60,5 +60,6 @@ module.exports = function(grunt) {
 
   // Default task(s).
   grunt.registerTask('default', ['uglify', 'less', 'autoprefixer', 'cssmin']);
+  grunt.registerTask('cssprocess', ['less', 'autoprefixer', 'cssmin']);
 
 };

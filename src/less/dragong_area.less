@@ -29,6 +29,7 @@ body{
 				left: 50px;				
 				font-weight: 200;
 				font-size: 1.3em;
+				font-family: @switcher;
 				color: @switcher_color;
 				border-top: 2px solid @switcher_color;
 				border-right: 2px solid @switcher_color;
@@ -107,8 +108,8 @@ body{
 					margin-right: 10px;
 					padding-left: 30px;
 					padding-right: 30px;
-					font-weight: bold;
 					font-size: 1.4em;
+					font-family: @submit_button_font;
 				}
 
 				//Search Input Styles
@@ -146,7 +147,14 @@ body{
 				margin: 25px auto 0 auto;
 				cursor: pointer;
 				transition: box-shadow .3s;
-
+				
+				.item_name{
+					font-family: @items_name_font;
+					font-weight: bold;
+				}
+				.item_price{
+					font-family: @items_price_font;
+				}
 				img{
 					height: 35%;
 					width: 66%;
@@ -154,6 +162,9 @@ body{
 				}
 				.item_price::after{
 					content: " р.";
+				}
+				button{
+					font-family: @items_button_font;
 				}
 				
 			}
@@ -167,7 +178,6 @@ body{
 				.item_name{
 					color: @item_name_color;
 					margin-top: 30px;
-					font-weight: bold;
 					letter-spacing: 2px;
 					font-size: 1.5em;
 				}
@@ -175,7 +185,6 @@ body{
 					color: @pink;
 					margin-top: 10px;
 					letter-spacing: 5px;
-					font-weight: bold;
 					font-size: 1.3em;
 				}
 				button{
@@ -196,7 +205,6 @@ body{
 				.item_name{
 					color: @item_name_color;
 					margin-top: 10px;
-					font-weight: bold;
 					letter-spacing: 2px;
 					font-size: 1.5em;
 				}

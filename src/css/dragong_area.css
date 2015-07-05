@@ -1,5 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Comfortaa);
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab);
+@import url(http://fonts.googleapis.com/css?family=Ubuntu);
 header {
   background: url("../img/overlay.png") repeat #282b34;
   -webkit-box-shadow: 0 0 10px #000000;
@@ -154,6 +155,7 @@ footer nav li {
 }
 footer nav li a {
   color: #83868d;
+  font-family: "Ubuntu";
   -webkit-transition: all .3s;
      -moz-transition: all .3s;
        -o-transition: all .3s;
@@ -179,6 +181,7 @@ footer #copyright ul {
 footer #copyright li {
   color: #83868d;
   font-size: 0.9em;
+  font-family: "Comfortaa";
   font-weight: bold;
   padding: 0 6px;
 }
@@ -210,6 +213,7 @@ body section #switcher label {
   left: 50px;
   font-weight: 200;
   font-size: 1.3em;
+  font-family: "Ubuntu";
   color: #b8bab3;
   border-top: 2px solid #b8bab3;
   border-right: 2px solid #b8bab3;
@@ -291,8 +295,8 @@ body section form#csgo_form button[type="submit"] {
   margin-right: 10px;
   padding-left: 30px;
   padding-right: 30px;
-  font-weight: bold;
   font-size: 1.4em;
+  font-family: "Comfortaa";
 }
 body section form#dota_form .search,
 body section form#csgo_form .search {
@@ -326,6 +330,15 @@ body section #items_list .new_item {
        -o-transition: box-shadow 0.3s;
           transition: box-shadow 0.3s;
 }
+body section #items_list .exist_item .item_name,
+body section #items_list .new_item .item_name {
+  font-family: "Ubuntu";
+  font-weight: bold;
+}
+body section #items_list .exist_item .item_price,
+body section #items_list .new_item .item_price {
+  font-family: "Ubuntu";
+}
 body section #items_list .exist_item img,
 body section #items_list .new_item img {
   height: 35%;
@@ -336,6 +349,10 @@ body section #items_list .exist_item .item_price::after,
 body section #items_list .new_item .item_price::after {
   content: " р.";
 }
+body section #items_list .exist_item button,
+body section #items_list .new_item button {
+  font-family: "Comfortaa";
+}
 body section #items_list .new_item:hover {
   -webkit-box-shadow: 0 0 25px #d2322d;
      -moz-box-shadow: 0 0 25px #d2322d;
@@ -344,7 +361,6 @@ body section #items_list .new_item:hover {
 body section #items_list .new_item .item_name {
   color: #83868d;
   margin-top: 30px;
-  font-weight: bold;
   letter-spacing: 2px;
   font-size: 1.5em;
 }
@@ -352,7 +368,6 @@ body section #items_list .new_item .item_price {
   color: #e97770;
   margin-top: 10px;
   letter-spacing: 5px;
-  font-weight: bold;
   font-size: 1.3em;
 }
 body section #items_list .new_item button {
@@ -369,7 +384,6 @@ body section #items_list .exist_item:hover {
 body section #items_list .exist_item .item_name {
   color: #83868d;
   margin-top: 10px;
-  font-weight: bold;
   letter-spacing: 2px;
   font-size: 1.5em;
 }
