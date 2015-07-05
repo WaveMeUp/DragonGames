@@ -4,18 +4,24 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
+    concat:{
+      basic_and_extras: {
+        files: {
+          'build/js/dragong_area.js': ['src/js/header.js', 'src/js/dragong_area.js'],
+          'build/js/authentication.js': ['src/js/header.js', 'src/js/authentication.js']
+        }
+      }
+    },
+
     uglify: {
       options: {
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
       },
       my_target: {
-            files: [{
-                expand: true,
-                cwd: 'src/js/',
-                src: '*.js',
-                dest: 'build/js',
-                ext: '.min.js'
-          }]
+            files: {
+              "build/js/authentication.min.js": "build/js/authentication.js",
+              "build/js/dragong_area.min.js": "build/js/dragong_area.js",
+          }
       }
     },
 
@@ -53,13 +59,14 @@ module.exports = function(grunt) {
   });
 
   // Load the plugin that provides the "uglify" task.
+  grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-autoprefixer');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
 
   // Default task(s).
-  grunt.registerTask('default', ['uglify', 'less', 'autoprefixer', 'cssmin']);
-  grunt.registerTask('cssprocess', ['less', 'autoprefixer', 'cssmin']);
+  grunt.registerTask('default', ['concat', 'uglify', 'less', 'autoprefixer', 'cssmin']);
+  grunt.registerTask('css', ['less', 'autoprefixer', 'cssmin']);
 
 };
