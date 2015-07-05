@@ -54,66 +54,34 @@ header ul li a:focus {
   color: #eeeeee;
   opacity: 1;
 }
+@media (max-width: 992px) {
+  header ul.navbar_list li a {
+    padding: 0 15px;
+  }
+}
 @media (max-width: 768px) {
   header h1 {
     padding-left: 15px;
   }
-  header ul.navbar_list {
+  header #both {
+    clear: both;
+  }
+  header nav ul.navbar_list {
     display: none;
-    background: white;
-    border: 2px solid #aaaaaa;
-    -webkit-border-radius: 10px;
-       -moz-border-radius: 10px;
-            border-radius: 10px;
-    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-       -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    position: absolute;
-    top: 120px;
-    right: 8px;
+    margin-top: 30px;
+    background-color: #282b34;
+    float: none !important;
   }
-  header ul.navbar_list li:last-child {
-    border-bottom: none;
+  header nav ul.navbar_list li {
+    display: block !important;
+    padding: 20px 10px;
+    margin-top: 0 !important;
+    border-top: 1px solid rgba(200, 200, 200, 0.7);
   }
-  header ul.navbar_list li {
-    display: block;
-    margin: 0 !important;
-    padding: 10px 0;
-    border-bottom: 2px solid #aaaaaa;
-  }
-  header ul.navbar_list li a {
-    padding: 0 25px;
-    color: #282b34 !important;
-    opacity: 1 !important;
-  }
-  header ul.navbar_list li a:active,
-  header ul.navbar_list li a:focus {
-    color: #e97770 !important;
-  }
-  header ul.navbar_list::before {
-    content: '';
-    position: absolute;
-    /* Абсолютное позиционирование */
-    right: 36px;
-    bottom: 104px;
-    /* Положение треугольника */
-    border: 20px solid transparent;
-    border-bottom: 20px solid #aaaaaa;
-  }
-  header ul.navbar_list::after {
-    content: '';
-    position: absolute;
-    /* Абсолютное позиционирование */
-    right: 36px;
-    bottom: 101px;
-    /* Положение треугольника */
-    border: 20px solid transparent;
-    border-bottom: 20px solid white;
-  }
-  header ul.navbar_icon {
+  header nav ul.navbar_icon {
     display: block !important;
   }
-  header ul.navbar_icon li {
+  header nav ul.navbar_icon li {
     padding: 0 !important;
   }
 }
@@ -124,6 +92,9 @@ header ul li a:focus {
   header ul.navbar_icon li {
     font-size: 1.5em !important;
     margin-top: 21px !important;
+  }
+  header ul.navbar_icon li a {
+    padding: 0 10px !important;
   }
 }
 footer {
