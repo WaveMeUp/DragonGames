@@ -98,7 +98,7 @@ header ul li a:focus {
   }
 }
 footer {
-  margin-top: 100px;
+  margin-top: 35px;
   -webkit-box-shadow: 0 0 10px #000000;
      -moz-box-shadow: 0 0 10px #000000;
           box-shadow: 0 0 10px #000000;
@@ -208,15 +208,18 @@ body section #switcher input:checked + label {
   border-color: #282b34 #282b34 white #282b34;
 }
 body section form#csgo_form {
+  background: url("../../src/img/csgo_logo.png") 100% 50% / contain no-repeat #ffffff;
   display: none;
+}
+body section form#dota_form {
+  background: url("../../src/img/dota_logo.png") 100% 50% / contain no-repeat #ffffff;
 }
 body section form#dota_form,
 body section form#csgo_form {
-  background: url("../img/overlay.png") repeat white;
   padding: 50px 75px;
-  -webkit-border-radius: 10px;
-     -moz-border-radius: 10px;
-          border-radius: 10px;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
   border: 2px solid #282b34;
 }
 body section form#dota_form .row:last-child,
@@ -233,6 +236,7 @@ body section form#csgo_form .radiobuttons input:checked + label {
 }
 body section form#dota_form .radiobuttons label,
 body section form#csgo_form .radiobuttons label {
+  border: 1px solid rgba(0, 0, 0, 0.0980392);
   -webkit-transition: background .4s;
      -moz-transition: background .4s;
        -o-transition: background .4s;
@@ -263,6 +267,7 @@ body section form#csgo_form label + div {
 }
 body section form#dota_form button[type="submit"],
 body section form#csgo_form button[type="submit"] {
+  width: 145px;
   margin-right: 10px;
   padding-left: 30px;
   padding-right: 30px;
@@ -277,7 +282,7 @@ body section #items_list {
   margin-top: 15px;
 }
 body section #items_list .button_more {
-  margin-top: 30px;
+  margin-top: 35px;
 }
 body section #items_list .button_more button {
   padding: 10px 30px;
@@ -288,9 +293,9 @@ body section #items_list div[class*="col-"] {
 body section #items_list .exist_item,
 body section #items_list .new_item {
   background: url("../img/overlay.png") repeat #282b34;
-  -webkit-border-radius: 10px;
-     -moz-border-radius: 10px;
-          border-radius: 10px;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
   width: 262.5px;
   margin-right: 0;
   text-align: center;
@@ -322,6 +327,9 @@ body section #items_list .new_item .item_price::after {
 }
 body section #items_list .exist_item button,
 body section #items_list .new_item button {
+  -webkit-border-radius: 3px!important;
+     -moz-border-radius: 3px!important;
+          border-radius: 3px!important;
   font-family: "Comfortaa";
 }
 body section #items_list .new_item:hover {
@@ -332,13 +340,14 @@ body section #items_list .new_item:hover {
 body section #items_list .new_item .item_name {
   color: #83868d;
   margin-top: 30px;
-  letter-spacing: 2px;
+  letter-spacing: 0;
   font-size: 1.5em;
 }
 body section #items_list .new_item .item_price {
   color: #e97770;
+  font-weight: bold;
   margin-top: 10px;
-  letter-spacing: 5px;
+  letter-spacing: 3px;
   font-size: 1.3em;
 }
 body section #items_list .new_item button {
@@ -355,13 +364,13 @@ body section #items_list .exist_item:hover {
 body section #items_list .exist_item .item_name {
   color: #83868d;
   margin-top: 10px;
-  letter-spacing: 2px;
+  letter-spacing: 0;
   font-size: 1.5em;
 }
 body section #items_list .exist_item .item_price {
   color: #e97770;
   margin-top: 10px;
-  letter-spacing: 5px;
+  letter-spacing: 3px;
   font-weight: bold;
   font-size: 1.3em;
 }
@@ -472,6 +481,10 @@ body #myModal .title {
   }
 }
 @media (max-width: 768px) {
+  section #dota_form,
+  section #csgo_form {
+    background-image: initial!important;
+  }
   section #dota_form label[for="finish_price"],
   section #csgo_form label[for="finish_price"] {
     margin-left: 0;
@@ -563,6 +576,9 @@ body #myModal .title {
   }
   section #items_list .exist_item button,
   section #items_list .new_item button {
+    -webkit-border-radius: 0px!important;
+       -moz-border-radius: 0px!important;
+            border-radius: 0px!important;
     padding: 4px 4px !important;
     font-size: 1em;
   }

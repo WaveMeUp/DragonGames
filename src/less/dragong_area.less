@@ -53,14 +53,18 @@ body{
 			
 			// By Default
 			&#csgo_form{
+				background: url(@cs_logo) 100% 50% / contain no-repeat rgb(255, 255, 255);
 				display: none;
+			}
+			&#dota_form{
+				background: url(@dota_logo) 100% 50% / contain no-repeat rgb(255, 255, 255);
 			}
 			// Styles for Dota and CS:GO
 			&#dota_form, &#csgo_form{
 				
-				background: url(@texture) repeat white;
+				//background: url(@texture) repeat white;
 				padding: 50px 75px;
-				border-radius: 10px;
+				border-radius: 5px;
 				border: 2px solid @head_foot_color;
 				
 				.row:last-child{
@@ -77,6 +81,7 @@ body{
 						background:  rgba(0,0,0,.1);
 					}
 					label{
+						border: 1px solid rgba(0, 0, 0, 0.0980392);
 						transition: background .4s;
 						border-radius: 5px;
 						cursor: pointer;
@@ -105,12 +110,15 @@ body{
 
 				// Submit-button Styles
 				button[type="submit"]{
+					width: 145px;
 					margin-right: 10px;
 					padding-left: 30px;
 					padding-right: 30px;
 					font-size: 1.4em;
 					font-family: @submit_button_font;
 				}
+
+				
 
 				//Search Input Styles
 				.search{
@@ -124,7 +132,7 @@ body{
 			
 			// Button "More"
 			.button_more{
-				margin-top: 30px;
+				margin-top: 35px;
 
 				button{
 					padding: 10px 30px;
@@ -139,7 +147,7 @@ body{
 			// General Styles for Exits and New Items
 			.exist_item, .new_item{
 				background: url(@texture) repeat @head_foot_color;
-				border-radius: 10px;
+				border-radius: 3px;
 				// height: 350px;
 				width: 262.5px;
 				margin-right: 0;
@@ -164,6 +172,7 @@ body{
 					content: " р.";
 				}
 				button{
+					border-radius: 3px!important;
 					font-family: @items_button_font;
 				}
 				
@@ -178,13 +187,14 @@ body{
 				.item_name{
 					color: @item_name_color;
 					margin-top: 30px;
-					letter-spacing: 2px;
+					letter-spacing: 0;
 					font-size: 1.5em;
 				}
 				.item_price{
 					color: @pink;
+					font-weight: bold;
 					margin-top: 10px;
-					letter-spacing: 5px;
+					letter-spacing: 3px;
 					font-size: 1.3em;
 				}
 				button{
@@ -205,13 +215,13 @@ body{
 				.item_name{
 					color: @item_name_color;
 					margin-top: 10px;
-					letter-spacing: 2px;
+					letter-spacing: 0;
 					font-size: 1.5em;
 				}
 				.item_price{
 					color: @pink;
 					margin-top: 10px;
-					letter-spacing: 5px;
+					letter-spacing: 3px;
 					font-weight: bold;
 					font-size: 1.3em;
 				}
@@ -360,6 +370,7 @@ body{
 
 		// Dota-form Styles
 		#dota_form, #csgo_form{
+			background-image: initial!important;;
 
 			// Price Options Styles
 			label[for="finish_price"]{
@@ -464,6 +475,7 @@ body{
 					font-size: 1em !important;
 				}
 				button{
+					border-radius: 0px!important;
 					padding: 4px 4px !important;
 					font-size: 1em;
 				}
