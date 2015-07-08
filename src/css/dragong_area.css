@@ -167,6 +167,7 @@ body article {
 }
 body article .alert {
   padding-left: 30px;
+  margin-bottom: 10px!important;
 }
 body section {
   position: relative;
@@ -404,7 +405,6 @@ body #myModal {
 body #myModal img {
   height: 150px;
   width: 250px;
-  margin-top: 75px;
 }
 body #myModal .title {
   color: #b8bab3;
